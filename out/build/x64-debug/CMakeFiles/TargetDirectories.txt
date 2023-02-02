@@ -1,0 +1,3 @@
+C:/Users/sakabdel/source/repos/hello-world/out/build/x64-debug/CMakeFiles/main.dir
+C:/Users/sakabdel/source/repos/hello-world/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/sakabdel/source/repos/hello-world/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
