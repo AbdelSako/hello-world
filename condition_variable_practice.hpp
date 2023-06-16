@@ -12,6 +12,7 @@ bool processed = false;
 
 void worker_thread()
 {
+    std::cout << "[+] worker_thread has started...\n";
     // Wait until main() sends data
     std::unique_lock lk(m);
     cv.wait(lk, [] {return ready; });
