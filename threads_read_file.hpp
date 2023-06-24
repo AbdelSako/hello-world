@@ -76,6 +76,7 @@ void bar(std::istream* stream) {
 	while (!stream->eof()) {
 		tmp.clear();
 		std::getline(*stream, tmp);
+		//stream->getline(tmp.data(), 30);
 		std::cout << tmp << std::endl;
 	}
 }
@@ -87,16 +88,31 @@ void Main() {
 	//thr1.join(); thr2.join();
 	//_file->close();
 	//delete _file;
-	std::filebuf buf;
-	buf.open(filename, std::ios_base::in);
-	std::istream stream(&buf);
-	bar(&stream);
-	bar(&stream);
+	
+	std::filebuf filebuf1;
+	std::filebuf filebuf2;
+	filebuf1.open(filename, std::ios_base::in);
+	filebuf2.open(filename, std::ios_base::in);
+
+	std::istream stream1(&filebuf1);
+	bar(&stream1);
+	stream1.clear();
+	//filebuf1.close();
+
+	std::istream stream2(&filebuf1);
+	//stream2.seekg(0);
+	bar(&stream2);
+	filebuf2.close();
+
+	/*std::ifstream fstream1;
+	fstream1.open(filename);
+	bar(&fstream1);
+	fstream1.close();*/
+	
 	
 	/*std::thread thr1(bar, &stream), thr2(bar, &stream);
 	thr1.join(); thr2.join();*/
 
-	buf.close();
 	
 	return;
 }
