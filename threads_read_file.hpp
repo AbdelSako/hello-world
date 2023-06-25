@@ -3,7 +3,7 @@
 #include <thread>
 #include <shared_mutex>
 #include <string>
-std::string filename("C:\\Users\\sakabdel\\source\\repos\\SOCKNET_API\\www\\index.html");
+std::string filename("C:\\Users\\tech\\source\\repos\\SOCKNET_API\\www\\index.html");
 class FileHandler {
 	std::ifstream fileStream;
 	std::string pathToFile;
